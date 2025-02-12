@@ -13,6 +13,9 @@
   <!--Google Fonts-->
   <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet"/>
+
+  <script type="text/javascript">var submitted=false;</script>
+  
  </head>
  <body>
   <header class="header" id="HOME">
@@ -204,7 +207,7 @@
           <!-- Wrapper for slides -->
           <div class="carousel-inner" role="listbox">
            <div class="item active">
-            <img alt="Client01" src="../bicycling/images/avatar_01.jpg"/>
+            <img alt="Client01" src="images/avatar_01.jpg"/>
             <div class="performer-caption">
              <h2>
               Create
@@ -215,7 +218,7 @@
             </div>
            </div>
            <div class="item">
-            <img alt="Client02" src="../bicycling/images/avatar_02.jpg"/>
+            <img alt="Client02" src="images/avatar_02.jpg"/>
             <div class="performer-caption">
              <h2>
               Collect:
@@ -226,7 +229,7 @@
             </div>
            </div>
            <div class="item">
-            <img alt="Client03" src="../bicycling/images/avatar_03.jpg"/>
+            <img alt="Client03" src="images/avatar_03.jpg"/>
             <div class="performer-caption">
              <h2>
               Care
@@ -442,22 +445,22 @@
     </div>
     <div class="section-wrapper">
      <div class="container">
-      <form role="form">
+      <form role="form" name="gform" id="gform" enctype="text/plain" action="https://docs.google.com/forms/d/e/1FAIpQLScVU5kcEoYpUtS4YitQzW2fHxGi3A4P61fZXfv2zh2quuES4A/formResponse?" target="hidden_iframe" onsubmit="submitted=true;">
        <div class="row">
         <div class="col-md-6 wow bounceInLeft">
          <div class="form-group">
-          <input class="form-control input-lg" placeholder="Your Name" type="text"/>
+          <input class="form-control input-lg" placeholder="Your Name" type="text" name="entry.617268636" id="entry.617268636"/>
          </div>
          <div class="form-group">
-          <input class="form-control input-lg" placeholder="Your E - Mail" type="text"/>
+          <input class="form-control input-lg" placeholder="Your Email" type="text" name="entry.420441210" id="entry.420441210"/>
          </div>
          <div class="form-group">
-          <input class="form-control input-lg" placeholder="Subjet" type="text"/>
+          <input class="form-control input-lg" placeholder="Subjet" type="text" name="entry.1509998350" id="entry.1509998350"/>
          </div>
         </div>
         <div class="col-md-6 wow bounceInRight">
          <div class="form-group">
-          <textarea class="form-control" placeholder="Your Message"></textarea>
+          <textarea class="form-control" name="entry.262771817" id="entry.262771817" placeholder="Your Message"></textarea>
          </div>
          <button class="btn btn-primary btn-block input-lg">
           SEND MESSAGE
@@ -465,6 +468,7 @@
         </div>
        </div>
       </form>
+      <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {}"></iframe>
      </div>
      <div class="container">
       <div class="row">
@@ -572,5 +576,11 @@
   <script>
    new WOW().init();
   </script>
+ <script type="text/javascript">
+    $('#gform').on('submit', function(e) {
+      $('#gform *').fadeOut(2000);
+      $('#gform').prepend('Your submission has been processed...');
+      });
+    </script>
  </body>
 </html>
