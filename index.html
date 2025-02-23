@@ -1,554 +1,933 @@
 <!DOCTYPE html>
-<html>
- <head>
-  <title>
-   Sympawthy.org - Crafting Kindness for Animal Welfare
-  </title>
-  <meta charset="utf-8"/>
-  <!--CSS-->
-  <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
-  <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-  <link href="css/style.css" rel="stylesheet" type="text/css"/>
-  <link href="css/animate.css" rel="stylesheet" type="text/css"/>
-  <!--Google Fonts-->
-  <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet"/>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sympawthy.org - Crafting Kindness for Animal Welfare</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Josefin+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Base Styles */
+        :root {
+            --primary-color: #FF69B4; /* Hot pink */
+            --primary-dark: #FF1493; /* Deep pink */
+            --primary-light: #FFB6C1; /* Light pink */
+            --text-color: #333;
+            --background-dark: rgba(31, 31, 31, 0.75);
+            --white: #fff;
+        }
 
-  <script type="text/javascript">var submitted=false;</script>
-  
- </head>
- <body>
-  <header class="header" id="HOME">
-   <!-- Navigation -->
-   <nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-     <!-- Brand and toggle get grouped for better mobile display -->
-     <div class="navbar-header">
-      <button aria-expanded="false" class="navbar-toggle collapsed" data-target="#loso-navbar-collapse-1" data-toggle="collapse" type="button">
-       <span class="sr-only">
-        Toggle navigation
-       </span>
-       <span class="icon-bar">
-       </span>
-       <span class="icon-bar">
-       </span>
-       <span class="icon-bar">
-       </span>
-      </button>
-      <a class="navbar-brand" href="#">
-       <!-- small size logo -->
-       <img alt="Sympawthy.org Logo" src="images/sympawthy-logo.png"/>
-      </a>
-     </div>
-     <!-- Collect the nav links, forms, and other content for toggling -->
-     <div class="collapse navbar-collapse" id="loso-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-       <li>
-        <a class="nav-item" href="#HOME">
-         HOME
-        </a>
-       </li>
-       <li>
-        <a class="nav-item" href="#about">
-         About Us
-        </a>
-       </li>
-       <li>
-        <a class="nav-item" href="#mission">
-         Our Mission
-        </a>
-       </li>
-       <li>
-        <a class="nav-item" href="#timeline">
-         Accomplishments
-        </a>
-       </li>
-       <li>
-        <a class="nav-item" href="#numbers">
-         Events
-        </a>
-       </li>
-       <li>
-        <a class="nav-item" href="#contact-us">
-         CONTACT
-        </a>
-       </li>
-      </ul>
-     </div>
-     <!-- /.navbar-collapse -->
-    </div>
-    <!-- /.container-fluid -->
-   </nav>
-   <div class="header-overlay">
-    <div class="container">
-     <div class="row">
-      <div class="col-md-12">
-       <!--Logo-->
-       <div class="logo text-center">
-        <img alt="Sympawthy.org Logo" class="logoimg" height="80px" src="images/sympawthy-logo.png" width="80px"/>
-       </div>
-      </div>
-      <div class="row">
-       <div class="col-md-8 wow bounceIn">
-        <div class="header-text">
-         <h1>
-          Sympawthy.org
-         </h1>
-         <p>
-          Crafting Kindness, One Paw at a Time
-         </p>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Playfair Display', serif;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            width: 100%;
+            padding: 1rem;
+            background: transparent;
+            transition: background 0.3s ease;
+            z-index: 1000;
+        }
+
+        .navbar.scrolled {
+            background: var(--background-dark);
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo img {
+            height: 50px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-family: 'Josefin Sans', sans-serif;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 50vh;
+            background-image: url('images/animal1.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--background-dark);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--white);
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .hero-text p {
+            font-size: 1.5rem;
+            font-family: 'Josefin Sans', sans-serif;
+        }
+
+        .hero-form {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .hero-form h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .hero-form input {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            border: 2px solid var(--primary-color);
+            background: transparent;
+            color: var(--white);
+            border-radius: 4px;
+        }
+
+        .hero-form button {
+            width: 100%;
+            padding: 1rem;
+            background: var(--primary-color);
+            color: var(--white);
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .hero-form button:hover {
+            background: #0b7ac4;
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Mission Cards */
+        .mission-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .mission-card {
+            text-align: center;
+            padding: 2rem;
+            background: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .mission-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .mission-card i {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background: var(--primary-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1px;
+        }
+
+        .timeline-item {
+            padding: 1rem 2rem;
+            position: relative;
+            background: var(--white);
+            border-radius: 8px;
+            width: calc(50% - 2rem);
+            margin: 2rem 0;
+        }
+
+        .timeline-item:nth-child(odd) {
+            margin-left: auto;
+        }
+
+        /* Counter Section */
+        .counter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .counter-item {
+            padding: 2rem;
+        }
+
+        .counter-item i {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .counter {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--text-color);
+        }
+
+        /* Contact Section Styles */
+        .contact {
+            background-image: url('images/animal3.jpg');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            padding: 5rem 2rem;
+        }
+
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        .contact .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .contact .form-control {
+            border: 2px solid var(--primary-color);
+            padding: 1rem;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.9);
+            width: 100%;
+        }
+
+        .contact textarea.form-control {
+            min-height: 150px;
+        }
+
+        .contact .btn-primary {
+            background: var(--primary-color);
+            border: none;
+            padding: 1rem;
+            color: var(--white);
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            width: 100%;
+        }
+
+        .contact .btn-primary:hover {
+            background: #0b7ac4;
+        }
+
+        .social-icons {
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .social-icons ul {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .social-icons a {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 3rem;
+            height: 3rem;
+            text-decoration: none; /* Added this line */
+        }
+
+        .social-icons a:hover {
+            color: #0b7ac4;
+            text-decoration: none; /* Added this line to prevent hover decoration */
+        }
+
+        .social-icons i {
+            font-size: 1.5em;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+        }
+
+        /* Animations */
+        .fade-up {
+            opacity: 50;
+            transform: translateY(20px);
+        }
+
+        @media (max-width: 768px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-form {
+                margin-top: 2rem;
+            }
+
+            .timeline::after {
+                left: 31px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+            }
+        }
+
+        /* Updated section backgrounds */
+        #about {
+            background-image: url('images/animal3.jpg');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            color: var(--white);
+        }
+
+        #about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        #mission {
+            background-image: url('images/animal2.jpg');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        #mission::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        #timeline {
+            background-image: url('images/crafts1.jpg');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            color: var(--white);
+        }
+
+        #timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        #numbers {
+            background-image: url('images/crafts2.jpg');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        #numbers::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Make section content appear above overlay */
+        .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* New Gallery Section */
+        #gallery {
+            padding: 5rem 2rem;
+            background: var(--white);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: -100%;
+            left: 0;
+            right: 0;
+            background: rgba(18, 156, 243, 0.9);
+            color: var(--white);
+            padding: 1rem;
+            transition: bottom 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            bottom: 0;
+        }
+
+        .gallery-overlay h3 {
+            margin: 0;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .gallery-overlay p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        /* Modal for gallery images */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1100;
+            padding: 2rem;
+            cursor: pointer;
+        }
+
+        .modal img {
+            max-width: 90%;
+            max-height: 90vh;
+            margin: auto;
+            display: block;
+            object-fit: contain;
+        }
+
+        /* Adjust timeline items for better contrast */
+        .timeline-item {
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--text-color);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="#" class="nav-logo">
+                <img src="images/logo.jpg" alt="Sympawthy.org Logo">
+            </a>
+            <div class="nav-links">
+                <a href="#home">HOME</a>
+                <a href="#about">About Us</a>
+                <a href="#mission">Our Mission</a>
+                <a href="#timeline">Timeline</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#contact">Contact</a>
+            </div>
         </div>
-        <div class="header-btns">
-         <a href="#about">
-          <i class="fa fa-angle-down wow bounceInUp">
-          </i>
-         </a>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-text fade-up">
+                <h1>Sympawthy.org</h1>
+                <p>Crafting Kindness, One Paw at a Time</p>
+            </div>
+            <!-- <form class="hero-form fade-up">
+                <h2>Meet The Champions</h2>
+                <input type="text" placeholder="First Name" required>
+                <input type="text" placeholder="Last Name" required>
+                <input type="email" placeholder="Email Address" required>
+                <button type="submit">Join Us</button>
+            </form> -->
         </div>
-       </div>
-       <div class="col-md-4">
-        <div class="header-col">
-         <form class="header-form" role="form">
-          <h2>
-           Meet The Champions
-          </h2>
-          <div class="form-group">
-           <input class="form-control input-3x" placeholder="First Name" type="text"/>
-          </div>
-          <div class="form-group">
-           <input class="form-control input-3x" placeholder="Last Name" type="text"/>
-          </div>
-          <div class="form-group">
-           <input class="form-control input-3x" placeholder="E- Mail Address" type="text"/>
-          </div>
-          <div class="form-group">
-           <button class="btn btn-primary btn-3x" type="submit">
-            Send Data
-            <span>
-             <i class="fa fa-angle-double-right">
-             </i>
-            </span>
-           </button>
-          </div>
-         </form>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title fade-up">About Us</h2>
+            <p class="fade-up">At sympawthy.org, our hearts beat for the well-being of animals. We are a 100% nonprofit organization dedicated to supporting local animal shelters through creative and heartfelt endeavors. By harnessing the passion and talents of young artists, we craft and sell handmade products, channeling every penny earned into caring for less fortunate animals. Our community-focused approach not only aids animals in need but also nurtures a spirit of generosity and creativity in the youth who participate. Join us in our mission to create, collect, share, and care—because together, we can make a <span style="font-size: 20px; color:brown;">pawsitive</span> difference!</p>
         </div>
-       </div>
-      </div>
-     </div>
-     <div class="row">
-     </div>
-    </div>
-   </div>
-  </header>
-  <!--Section About-->
-  <section id="about">
-   <div class="section-about">
-    <div class="container">
-     <img alt="Sympawthy About Us Image" class="img-responsive center" src="images/leaders-1.jpg"/>
-     <div class="row">
-      <div class="col-md-12 wow bounceIn">
-       <h2 class="section-title">
-        About Us
-       </h2>
-       <p class="under-heading">
-        Learn more about our mission and activities
-       </p>
-      </div>
-     </div>
-    </div>
-    <div class="section-wrapper">
-     <div class="container">
-      <div class="row">
-       <div class="col-md-12">
-        <p style="font-size: large;">
-         At sympawthy.org, our hearts beat for the well-being of animals. We are a 100% nonprofit organization dedicated to supporting local animal shelters through creative and heartfelt endeavors. By harnessing the passion and talents of young artists, we craft and sell handmade products, channeling every penny earned into caring for less fortunate animals. Our community-focused approach not only aids animals in need but also nurtures a spirit of generosity and creativity in the youth who participate. Join us in our mission to create, collect, share, and care—because together, we can make a
-         <b>
-          pawsitive
-         </b>
-         difference!
-        </p>
-       </div>
-      </div>
-     </div>
-    </div>
-   </div>
-  </section>
-  <!--end of about section-->
-  <!--Performers Section-->
-  
-   
-  <section class="performer-section" id="mission">
-   <div class="performer wow flipInY">
-    <div class="performer-overlay">
-     <div class="container">
-      <img alt="Our Mission Image" class="img-responsive center" src="images/service-dog-2.jpg"/>
-      <div class="row">
-       <div class="col-md-12">
-        <h2 class="section-title">
-         Our Mission
-        </h2>
-       </div>
-      </div>
-     </div>
-     <div class="section-wrapper">
+    </section>
+
+    <section id="mission">
+        <div class="container">
+            <h2 class="section-title fade-up">Our Mission</h2>
+            <div class="mission-cards">
+                <div class="mission-card fade-up">
+                    <i class="fas fa-paint-brush"></i>
+                    <h3>Create</h3>
+                    <p>Foster a nurturing environment where children can learn and express their creativity through art.</p>
+                </div>
+                <div class="mission-card fade-up">
+                    <i class="fas fa-hands-helping"></i>
+                    <h3>Collect</h3>
+                    <p>Empower our young artists to promote and sell their crafts, developing entrepreneurship skills.</p>
+                </div>
+                <div class="mission-card fade-up">
+                    <i class="fas fa-heart"></i>
+                    <h3>Care</h3>
+                    <p>Direct our efforts to provide substantial support to local animal shelters.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="timeline">
+        <div class="container">
+            <h2 class="section-title fade-up">Our Journey</h2>
+            <div class="timeline">
+                <div class="timeline-item fade-up">
+                    <h3>2023.7</h3>
+                    <p>12 crafting workshops completed, engaging over 30 kids.</p>
+                </div>
+                <div class="timeline-item fade-up">
+                    <h3>2023.12</h3>
+                    <p>6 Events attended, over 75 crafts sold.</p>
+                </div>
+                <div class="timeline-item fade-up">
+                    <h3>2024.9</h3>
+                    <p>$200 raised and donated to local animal shelters.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="numbers">
+        <div class="container">
+            <h2 class="section-title fade-up">Our Impact</h2>
+            <div class="counter-grid">
+                <div class="counter-item fade-up">
+                    <i class="fas fa-users"></i>
+                    <div class="counter" data-target="30">0</div>
+                    <p>Kids Participated</p>
+                </div>
+                <div class="counter-item fade-up">
+                    <i class="fas fa-paint-brush"></i>
+                    <div class="counter" data-target="115">0</div>
+                    <p>Crafts Made</p>
+                </div>
+                <div class="counter-item fade-up">
+                    <i class="fas fa-calendar-check"></i>
+                    <div class="counter" data-target="7">0</div>
+                    <p>Events Attended</p>
+                </div>
+                <div class="counter-item fade-up">
+                    <i class="fas fa-dollar-sign"></i>
+                    <div class="counter" data-target="200">0</div>
+                    <p>Dollars Raised</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Add new gallery section before the footer -->
+    <section id="gallery">
       <div class="container">
-  <div class="row">
-      <div class="col-md-4 wow bounceInDown"> 
-         <a href="#"><i class="fa fa-clock-o fa-5x square"></i></a>
-         <h3 class="heading">Create</h3>
-         <p class="col-caption">Foster a nurturing environment where children can learn and express their creativity through art and craft-making.</p>
+          <h2 class="section-title fade-up">Our Gallery</h2>
+          <div class="gallery-grid">
+              <div class="gallery-item fade-up">
+                  <img src="images/crafts5.jpg" alt="Crafting Workshop">
+                  <div class="gallery-overlay">
+                      <h3>Crafting Workshop</h3>
+                      <p>Young artists creating beautiful pieces for animal welfare</p>
+                  </div>
+              </div>
+              <div class="gallery-item fade-up">
+                  <img src="images/service-dog-2.jpg" alt="Animal Shelter Visit">
+                  <div class="gallery-overlay">
+                      <h3>Shelter Visit</h3>
+                      <p>Meeting our furry friends at local shelters</p>
+                  </div>
+              </div>
+              <div class="gallery-item fade-up">
+                  <img src="images/crafts3.jpg" alt="Art Sale">
+                  <div class="gallery-overlay">
+                      <h3>Art Sale</h3>
+                      <p>Community event showcasing children's artwork</p>
+                  </div>
+              </div>
+              <div class="gallery-item fade-up">
+                  <img src="images/leaders-1.jpg" alt="Donation Day">
+                  <div class="gallery-overlay">
+                      <h3>Donation Day</h3>
+                      <p>Delivering supplies to our partner shelters</p>
+                  </div>
+              </div>
+              <div class="gallery-item fade-up">
+                  <img src="images/team_meeting.jpg" alt="Team Meeting">
+                  <div class="gallery-overlay">
+                      <h3>Team Meeting</h3>
+                      <p>Planning our next community initiative</p>
+                  </div>
+              </div>
+              <div class="gallery-item fade-up">
+                  <img src="images/service-dog.jpg" alt="Success Stories">
+                  <div class="gallery-overlay">
+                      <h3>Success Stories</h3>
+                      <p>Celebrating our impact on animal welfare</p>
+                  </div>
+              </div>
+          </div>
       </div>
-          
-       <div class="col-md-4 wow bounceInDown">
-         <a href="#"><i class="fa fa-flag fa-5x"></i></a>
-         <h3 class="heading">Collect</h3>
-         <p class="col-caption">Empower our young artists to promote and sell their crafts, developing skills in entrepreneurship and community engagement.</p>
-              
-       </div>         
-       <div class="col-md-4 wow bounceInRight">
-         <a href="#"><i class="fa fa-life-ring fa-5x"></i></a>
-         <h3 class="heading">Care</h3>
-         <p class="col-caption">Direct our collective efforts to provide substantial support to local animal shelters, ensuring that animals receive the love and care they deserve.</p>
-          
-       </div>
+  </section>
+
+  <div class="modal" id="imageModal">
+      <img src="" alt="Modal Image">
   </div>
-</div>
-  </div>
-    </div>
-   </div>
-  </section>
-  <!--End of Performers-->
-  <section class="why-us" id="timeline">
-   <div class="section-timeline">
+
+  <section id="contact" class="contact">
     <div class="container">
-     <img alt="Accomplishments Image" class="img-responsive  center" src="images/service-dog.jpg"/>
-     <h2 class="heading">
-      Our
-      <span class="bold-green">
-       Timeline
-      </span>
-     </h2>
-     <p class="lead under-heading text-center">
-      Look at our timer
-     </p>
-     <ul class="timeline">
-      <li>
-       <div class="timeline-badge">
-        <span class="counteryear">
-         2023.7
-        </span>
-       </div>
-       <div class="timeline-panal wow bounceIn">
-        <div class="timeline-heading">
-         <h4 class="timeline-title">
-          12 crafting workshops
-          <span class="blue-underline">
-           Done
-          </span>
-         </h4>
-         <p>
-          <small class="text-muted">
-           <i class="fa fa-clock-o">
-           </i>
-           11 hours ago via Twitter
-          </small>
-         </p>
+        <h2 class="section-title fade-up">Contact Us</h2>
+        <div class="section-wrapper">
+            <form role="form" name="gform" id="gform" enctype="text/plain" 
+                  action="https://docs.google.com/forms/d/e/1FAIpQLScVU5kcEoYpUtS4YitQzW2fHxGi3A4P61fZXfv2zh2quuES4A/formResponse?" 
+                  target="hidden_iframe" onsubmit="submitted=true;">
+                <div class="row">
+                  <div class="col-md-6 fade-up">
+                    <div class="form-group">
+                        <input class="form-control input-lg" placeholder="Your Name" type="text" 
+                               name="entry.617268636" id="entry.617268636" required/>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control input-lg" placeholder="Your Email" type="email" 
+                               name="entry.420441210" id="entry.420441210" required/>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control input-lg" placeholder="Subject" type="text" 
+                               name="entry.1509998350" id="entry.1509998350" required/>
+                    </div>
+                </div>
+                <div class="col-md-6 fade-up">
+                    <div class="form-group">
+                        <textarea class="form-control" name="entry.262771817" id="entry.262771817" 
+                                  placeholder="Your Message" required></textarea>
+                    </div>
+                    <button class="btn btn-primary btn-block input-lg">
+                        SEND MESSAGE
+                    </button>
+                </div>
+                </div>
+            </form>
+            <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" 
+                    onload="if(submitted) {}"></iframe>            
+              <div class="social-icons fade-up">
+                <ul>
+                    <li>
+                        <a href="#" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" aria-label="Google">
+                            <i class="fab fa-google"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/sympawthy.usa/" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <div class="timeline-body">
-         <p>
-          Hosted over 12 crafting workshops, engaging over 30 kids in creative endeavors, more than 100 brecelets and cards made.
-         </p>
-        </div>
-       </div>
-       <!--end of timeline panel-->
-      </li>
-      <li class="timeline-inverted">
-       <div class="timeline-badge">
-        <span class="counteryear">
-         2023.12
-        </span>
-       </div>
-       <div class="timeline-panal wow bounceIn">
-        <div class="timeline-heading">
-         <h4 class="timeline-title">
-          <span class="blue-underline">
-           6
-          </span>
-          Events attended
-         </h4>
-         <p>
-          <small class="text-muted">
-           <i aria-hidden="true" class="fa fa-clock-o">
-           </i>
-           11 hours ago via Twitter
-          </small>
-         </p>
-        </div>
-        <div class="timeline-body">
-         <p>
-          Attended 7 local events and sold over 75 crafts
-         </p>
-        </div>
-       </div>
-       <!--end of timeline panel-->
-      </li>
-      <li>
-       <div class="timeline-badge">
-        <span class="counteryear">
-         2024.9
-        </span>
-       </div>
-       <div class="timeline-panal wow bounceIn">
-        <div class="timeline-heading">
-         <h4 class="timeline-title">
-          <span class="blue-underline">
-           $200
-          </span>
-          Donated
-         </h4>
-         <p>
-          <small class="text-muted">
-           <i aria-hidden="true" class="fa fa-clock-o">
-           </i>
-           11 hours ago via Twitter
-          </small>
-         </p>
-        </div>
-        <div class="timeline-body">
-         <p>
-          Raised and donated over $200 to local animal shelters, directly impacting the lives of animals in our community. Built partnerships with five local animal shelters, extending our reach and impact.
-         </p>
-        </div>
-       </div>
-       <!--end of timeline panel-->
-      </li>
-     </ul>
     </div>
-   </div>
   </section>
-  <!--end of timeline-->
-  <section id="numbers">
-   <div class="numbers-section">
-    <div class="container">
-     <img alt="Events Image" class="img-responsive center" src="images/shelter.jpg"/>
-     <div class="row">
-      <div class="col-md-12">
-       <h2 class="section-title">
-        Accomplishment  Counter
-       </h2>
-       <p class="under-heading">
-        Review our Numbers
-       </p>
-      </div>
-     </div>
-    </div>
-    <div class="section-wrapper">
-     <div class="container">
-      <div class="row">
-       <div class="col-md-3">
-        <div class="num-data block-inline">
-         <i class="fa fa-flag fa-5x">
-         </i>
-         <div class="counter">
-          30
-         </div>
-         <p>
-          kid participated
-         </p>
-        </div>
-       </div>
-       <div class="col-md-3">
-        <div class="num-data block-inline">
-         <i class="fa fa-database fa-5x">
-         </i>
-         <div class="counter">
-          115
-         </div>
-         <p>
-          Brecelets and cards made
-         </p>
-        </div>
-       </div>
-       <div class="col-md-3">
-        <div class="num-data block-inline">
-         <i class="fa fa-google-plus fa-5x">
-         </i>
-         <div class="counter">
-          7
-         </div>
-         <p>
-          Local Events attended
-         </p>
-        </div>
-       </div>
-       <div class="col-md-3">
-        <div class="num-data block-inline">
-         <i class="fa fa-life-ring fa-5x">
-         </i>
-         <div class="counter">
-          200
-         </div>
-         <p>
-          Dollars Raised for animal welfare
-         </p>
-        </div>
-       </div>
-      </div>
-     </div>
-    </div>
-   </div>
-  </section>
-  <section id="contact-us">
-   <div class="contact-us">
-    <div class="container">
-     <div class="row">
-      <div class="col-md-12 wow bounceInDown">
-       <h2 class="section-title">
-        Leave Your Feedback
-       </h2>
-       <p class="under-heading">
-        Feel Free to text us
-       </p>
-      </div>
-     </div>
-    </div>
-    <div class="section-wrapper">
-     <div class="container">
-      <form role="form" name="gform" id="gform" enctype="text/plain" action="https://docs.google.com/forms/d/e/1FAIpQLScVU5kcEoYpUtS4YitQzW2fHxGi3A4P61fZXfv2zh2quuES4A/formResponse?" target="hidden_iframe" onsubmit="submitted=true;">
-       <div class="row">
-        <div class="col-md-6 wow bounceInLeft">
-         <div class="form-group">
-          <input class="form-control input-lg" placeholder="Your Name" type="text" name="entry.617268636" id="entry.617268636"/>
-         </div>
-         <div class="form-group">
-          <input class="form-control input-lg" placeholder="Your Email" type="text" name="entry.420441210" id="entry.420441210"/>
-         </div>
-         <div class="form-group">
-          <input class="form-control input-lg" placeholder="Subjet" type="text" name="entry.1509998350" id="entry.1509998350"/>
-         </div>
-        </div>
-        <div class="col-md-6 wow bounceInRight">
-         <div class="form-group">
-          <textarea class="form-control" name="entry.262771817" id="entry.262771817" placeholder="Your Message"></textarea>
-         </div>
-         <button class="btn btn-primary btn-block input-lg">
-          SEND MESSAGE
-         </button>
-        </div>
-       </div>
-      </form>
-      <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {}"></iframe>
-     </div>
-     <div class="container">
-      <div class="row">
-       <div class="col-md-12">
-        <div class="social-icons wow slideInDown">
-         <ul class="list-unstyled">
-          <li>
-           <a href="#">
-            <i class="fa fa-facebook fa-3x">
-            </i>
-           </a>
-          </li>
-          <li>
-           <a href="#">
-            <i class="fa fa-twitter fa-3x">
-            </i>
-           </a>
-          </li>
-          <li>
-           <a href="#">
-            <i class="fa fa-google-plus fa-3x">
-            </i>
-           </a>
-          </li>
-          <li>
-           <a href="https://www.instagram.com/sympawthy.usa/">
-            <i class="fa fa-instagram fa-3x">
-            </i>
-           </a>
-          </li>
-         </ul>
-        </div>
-       </div>
-      </div>
-     </div>
-    </div>
-   </div>
-  </section>
-  <section id="footer">
-   <div class="footer-section">
-    <div class="container">
-     <div class="row">
-      <div class="col-md-4">
-       <p class="footer-text">
-        Copyright
-        <span class="copyright">
-         ©
-        </span>
-        2025
-       </p>
-      </div>
-      <div class="col-md-4">
-       <p class="footer-text">
-        Paw Theme
-       </p>
-      </div>
-      <div class="col-md-4">
-       <p class="footer-text">
-        Brought to you by
-        <span class="usama">
-         Sympawthy
-        </span>
-       </p>
-      </div>
-     </div>
-    </div>
-   </div>
-  </section>
-  <section class="loading-overlay">
-   <div class="sk-cube-grid">
-    <div class="sk-cube sk-cube1">
-    </div>
-    <div class="sk-cube sk-cube2">
-    </div>
-    <div class="sk-cube sk-cube3">
-    </div>
-    <div class="sk-cube sk-cube4">
-    </div>
-    <div class="sk-cube sk-cube5">
-    </div>
-    <div class="sk-cube sk-cube6">
-    </div>
-    <div class="sk-cube sk-cube7">
-    </div>
-    <div class="sk-cube sk-cube8">
-    </div>
-    <div class="sk-cube sk-cube9">
-    </div>
-   </div>
-  </section>
-  <script src="js/jquery.js">
-  </script>
-  <script src="js/bootstrap.min.js">
-  </script>
-  <script src="js/plugins.js">
-  </script>
-  <script src="js/jquery.counterup.min.js">
-  </script>
-  <script src="js/jquery.waypoints.min.js">
-  </script>
-  <script src="js/jquery.nicescroll.min.js">
-  </script>
-  <script src="js/wow.min.js">
-  </script>
-  <script>
-   new WOW().init();
-  </script>
- <script type="text/javascript">
-    $('#gform').on('submit', function(e) {
-      $('#gform *').fadeOut(2000);
-      $('#gform').prepend('Your submission has been processed...');
-      });
+
+    <footer>
+        <p>&copy; 2025 Sympawthy.org - Crafting Kindness for Animal Welfare</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/ScrollTrigger.min.js"></script>
+    
+    <script>
+        // Initialize GSAP
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Animate elements on load
+        gsap.from('.fade-up', {
+            opacity: 0,
+            y: 30,
+            duration: 1,
+            stagger: 0.2,
+            ease: 'power2.out',
+            scrollTrigger: {
+                trigger: '.fade-up',
+                start: 'top 80%',
+                toggleActions: 'play none none reverse'
+            }
+        });
+
+        // Counter animation
+        const counters = document.querySelectorAll('.counter');
+        
+        counters.forEach(counter => {
+            const target = parseInt(counter.getAttribute('data-target'));
+            let current = 0;
+            
+            const updateCounter = () => {
+                const increment = target / 100;
+                if (current < target) {
+                    current += increment;
+                    counter.innerText = Math.ceil(current);
+                    setTimeout(updateCounter, 10);
+                } else {
+                    counter.innerText = target;
+                }
+            };
+            
+            ScrollTrigger.create({
+                trigger: counter,
+                start: 'top 80%',
+                onEnter: () => updateCounter()
+            });
+        });
+
+
+        // Gallery interactions
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        const modal = document.getElementById('imageModal');
+        const modalImg = modal.querySelector('img');
+
+        // Initial state - ensure everything is visible
+        gsap.set('.gallery-item', { opacity: 1, y: 0 });
+
+        galleryItems.forEach(item => {
+            // Hover animation
+            item.addEventListener('mouseenter', () => {
+                gsap.to(item.querySelector('img'), {
+                    scale: 1.1,
+                    duration: 0.3,
+                    ease: 'power2.out'
+                });
+            });
+
+            item.addEventListener('mouseleave', () => {
+                gsap.to(item.querySelector('img'), {
+                    scale: 1,
+                    duration: 0.3,
+                    ease: 'power2.out'
+                });
+            });
+
+            // Modal functionality
+            item.addEventListener('click', () => {
+                const img = item.querySelector('img');
+                modalImg.src = img.src;
+                modalImg.alt = img.alt;
+                modal.style.display = 'flex';
+                
+                gsap.from(modalImg, {
+                    scale: 0.5,
+                    opacity: 0,
+                    duration: 0.5,
+                    ease: 'back.out'
+                });
+            });
+        });
+
+        modal.addEventListener('click', () => {
+            gsap.to(modalImg, {
+                scale: 0.5,
+                opacity: 0,
+                duration: 0.3,
+                ease: 'power2.in',
+                onComplete: () => {
+                    modal.style.display = 'none';
+                    modalImg.style.transform = 'none';
+                    modalImg.style.opacity = '1';
+                }
+            });
+        });
+
+        // Subtle fade-in animation that won't hide the images
+        ScrollTrigger.create({
+            trigger: '.gallery-grid',
+            start: 'top bottom',
+            onEnter: () => {
+                gsap.to('.gallery-item', {
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.5,
+                    stagger: 0.1,
+                    ease: 'power2.out'
+                });
+            },
+            once: true // Animation plays only once
+        });
+
+        // Form submission handling
+        let submitted = false;
+        const form = document.getElementById('gform');
+        const thankYouMessage = document.createElement('div');
+        thankYouMessage.style.color = '#fff';
+        thankYouMessage.style.textAlign = 'center';
+        thankYouMessage.style.padding = '2rem';
+        thankYouMessage.innerHTML = '<h3>Thank you for your message!</h3><p>We will get back to you soon.</p>';
+
+        form.addEventListener('submit', function(e) {
+            const formElements = form.elements;
+            gsap.to(formElements, {
+                opacity: 0,
+                duration: 0.5,
+                stagger: 0.1,
+                onComplete: () => {
+                    form.style.height = form.offsetHeight + 'px';
+                    form.innerHTML = '';
+                    form.appendChild(thankYouMessage);
+                    gsap.from(thankYouMessage, {
+                        opacity: 0,
+                        y: 20,
+                        duration: 0.5
+                    });
+                }
+            });
+        });
     </script>
- </body>
+</body>
 </html>
